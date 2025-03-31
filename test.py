@@ -10,10 +10,10 @@ from tensorflow.keras.applications import DenseNet201
 from tensorflow.keras.models import Model
 import matplotlib.pyplot as plt
 from textwrap import wrap
-from tqdm import tqdm
+
 
 # Đường dẫn
-BASE_DIR = r'D:\PycharmProjects\Python'
+BASE_DIR = ''
 image_path = os.path.join(BASE_DIR, 'image')
 
 # Load dữ liệu captions
@@ -70,7 +70,7 @@ else:
     features = {}
 
 # Load model đã train
-model_path = os.path.join(BASE_DIR, 'model1.keras')
+model_path = os.path.join(BASE_DIR, 'model.keras')
 caption_model = load_model(model_path)
 print("Model loaded successfully!")
 
@@ -120,7 +120,7 @@ def display_image_and_caption(image_path, image_name, caption, actual_captions=N
 
 
 # Ví dụ sử dụng
-image_name = 'anh-cho-meo.jpg'  # Thay bằng tên ảnh muốn dự đoán
+image_name = 'gai.jpg'  # Thay bằng tên ảnh muốn dự đoán
 
 # Dự đoán caption
 caption = predict_caption(caption_model, image_name, tokenizer, max_length, features, image_path)
