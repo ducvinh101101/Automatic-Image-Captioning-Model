@@ -1,0 +1,35 @@
+{
+  "_name_or_path": "microsoft/git-base",
+  "architectures": [
+    "GitForCausalLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 101,
+  "classifier_dropout": null,
+  "eos_token_id": 102,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 1024,
+  "model_type": "git",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "num_image_with_embedding": null,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "tie_word_embeddings": false,
+  "torch_dtype": "float32",
+  "transformers_version": "4.46.3",
+  "use_cache": true,
+  "vision_config": {
+    "_attn_implementation_autoset": true,
+    "dropout": 0.0,
+    "initializer_factor": 1.0,
+    "model_type": "git_vision_model",
+    "projection_dim": 512
+  },
+  "vocab_size": 30522
+}

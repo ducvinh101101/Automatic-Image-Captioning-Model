@@ -120,11 +120,11 @@ def display_image_and_caption(image_path, image_name, caption, actual_captions=N
 
 
 # Ví dụ sử dụng
-image_name = 'gai.jpg'  # Thay bằng tên ảnh muốn dự đoán
+image_name = '639120223_7db6bdb61f.jpg'  # Thay bằng tên ảnh muốn dự đoán
 
 # Dự đoán caption
 caption = predict_caption(caption_model, image_name, tokenizer, max_length, features, image_path)
-
+print(caption)
 # Lấy các caption thực tế từ data (nếu có)
 actual_captions = data[data['image'] == image_name]['caption'].tolist() if image_name in data['image'].values else None
 
