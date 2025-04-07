@@ -1,15 +1,17 @@
-from transformers import GitProcessor, GitForCausalLM
+# Import necessary libraries
+from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
 import torch
 
+# Define device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Tải mô hình và processor từ Hugging Face
-model_dir = "git_caption_model"  # Use a valid Hugging Face model ID
-processor = GitProcessor.from_pretrained(model_dir)
-model = GitForCausalLM.from_pretrained(model_dir).to(device)
+# Load the saved model and processor
+model_dir = "blip_caption_model"  # Thay bằng đường dẫn thực tế
+processor = BlipProcessor.from_pretrained(model_dir)
+model = BlipForConditionalGeneration.from_pretrained(model_dir).to(device)
 
-# Hàm dự đoán caption cho ảnh
+# Function to generate caption
 def predict_caption(model, processor, image_path, max_length=50):
     model.eval()
     with torch.no_grad():
@@ -19,9 +21,7 @@ def predict_caption(model, processor, image_path, max_length=50):
         caption = processor.decode(generated_ids[0], skip_special_tokens=True)
     return caption
 
-
+# Example usage
 image_path = "image/gai.jpg"
 caption = predict_caption(model, processor, image_path)
-img = Image.open(image_path)
-img.show()
 print(f"Generated caption: {caption}")
