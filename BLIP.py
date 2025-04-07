@@ -22,6 +22,6 @@ def predict_caption(model, processor, image_path, max_length=50):
     return caption
 
 # Example usage
-image_path = "image/gai.jpg"
+image_path = "image/download.jpg"
 caption = predict_caption(model, processor, image_path)
 print(f"Generated caption: {caption}")

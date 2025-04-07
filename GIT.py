@@ -20,7 +20,7 @@ def predict_caption(model, processor, image_path, max_length=50):
     return caption
 
 
-image_path = "image/gai.jpg"
+image_path = "image/download.jpg"
 caption = predict_caption(model, processor, image_path)
 img = Image.open(image_path)
 img.show()
